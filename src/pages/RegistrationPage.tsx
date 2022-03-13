@@ -2,7 +2,6 @@ import React, { FormEventHandler } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRegistration } from '../contexts/registration'
 
-
 const RegistrationPage = () => {
     const navigate = useNavigate()
     const registration = useRegistration()
@@ -19,13 +18,13 @@ const RegistrationPage = () => {
             newsletter: form.newsletter.value,
             cookies: form.cookies.value,
         })
-        
-        navigate("/preferences")
+
+        navigate('/preferences')
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="email" >Email</label>
+            <label htmlFor="email">Email</label>
             <input id="email" name="email" type="email" required></input>
 
             <label htmlFor="password">Jelszó</label>

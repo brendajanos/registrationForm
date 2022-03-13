@@ -4,10 +4,10 @@ import RegistrationPage from '../pages/RegistrationPage'
 import ConfirmationPage from '../pages/ConfirmationPage'
 import PreferencesPage from '../pages/PreferencesPage'
 import { RegistrationProvider, IBasicData } from '../contexts/registration'
+import ProtectedRoute from './ProtectedRoute'
 
 function App() {
-
-    const [basicData, setBasicData] = useState <IBasicData>()
+    const [basicData, setBasicData] = useState<IBasicData>()
 
     return (
         <Router>
@@ -16,8 +16,22 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Navigate to="/registration" />} />
                         <Route path="/registration" element={<RegistrationPage />} />
-                        <Route path="/preferences" element={<PreferencesPage />} />
-                        <Route path="/email-confirmation" element={<ConfirmationPage />} />
+                        <Route
+                            path="/preferences"
+                            element={
+                                <ProtectedRoute hasBasicData={!!basicData}>
+                                    <PreferencesPage />{' '}
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/email-confirmation"
+                            element={
+                                <ProtectedRoute hasBasicData={!!basicData}>
+                                    <ConfirmationPage />{' '}
+                                </ProtectedRoute>
+                            }
+                        />
                     </Routes>
                 </RegistrationProvider>
             </div>
