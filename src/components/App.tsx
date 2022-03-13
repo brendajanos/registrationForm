@@ -1,10 +1,19 @@
 import React from 'react'
+import { Route, Routes, Navigate, BrowserRouter as Router } from 'react-router-dom'
+import RegistrationPage from '../pages/RegistrationPage'
+import ConfirmationPage from '../pages/ConfirmationPage'
 
 function App() {
     return (
-        <div className="App">
-            <h1>Hello Pug</h1>
-        </div>
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<Navigate to="/registration"/>} />
+                    <Route path="/registration" element={<RegistrationPage/>} />
+                    <Route path="/email-confirmation" element={<ConfirmationPage/>} />
+                </Routes>
+            </div>
+        </Router>
     )
 }
 
