@@ -1,16 +1,18 @@
 import React, { FormEventHandler } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useRegistration } from '../contexts/registration'
 
 
 const RegistrationPage = () => {
     const navigate = useNavigate()
+    const registration = useRegistration()
 
     const handleSubmit: FormEventHandler = (event) => {
         event.preventDefault()
 
         const form = event.target as HTMLFormElement
 
-        console.table({
+        registration.setBasicData({
             email: form.email.value,
             password: form.password.value,
             birthdate: form.birthdate.value,

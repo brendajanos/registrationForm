@@ -1,10 +1,11 @@
 import React from 'react'
+import { useRegistration } from '../contexts/registration'
 
 const ConfirmationPage = () => {
-    const email = ""
+    const registration = useRegistration()
 
   return (
-    <div>Az {email}-re elküldtük a további információkat. </div>
+    <div>Az {registration.basicData?.email}-re elküldtük a további információkat. </div>
   )
 }
 
