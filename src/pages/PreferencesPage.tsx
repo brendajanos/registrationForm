@@ -3,6 +3,7 @@ import Select, { components } from 'react-select'
 import Creatable from 'react-select'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Modal from '../components/Modal'
 
 const computerOptions = [
     { value: 'laptop', label: '💻 Laptop' },
@@ -26,37 +27,43 @@ const PreferencesPage = () => {
     }
 
     const computerOptions = [
-        { value: 'laptop', label: '💻' + t('computerOptions.laptop') },
-        { value: 'desktop', label: '🖥' + t('computerOptions.desktop') },
+        { value: 'laptop', label: '💻 ' + t('computerOptions.laptop') },
+        { value: 'desktop', label: '🖥 ' + t('computerOptions.desktop') },
     ]
 
     return (
-        <form onSubmit={handleSubmit}>
-            <Select options={computerOptions} placeholder= {t("select")+ "..."} />
-            <Creatable
-                isMulti
-                placeholder= {t("select")+ "..."}
-                options={toolOptions}
-                components={{
-                    Option: ({ children, ...rest }) => (
-                        <components.Option {...rest}>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                    alignItems: 'center',
-                                    columnGap: '8px',
-                                }}
-                            >
-                                <img style={{ height: '16px', width: '16px' }} src={rest.data.icon} alt="" />
-                                {children}
-                            </div>
-                        </components.Option>
-                    ),
-                }}
-            />
-            <input type="submit" value={t<string>('register')} />
-        </form>
+        <Modal>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="computerOptions">{t("pref.computerOptions")}</label>
+                <Select id="computerOptions" className='select' options={computerOptions} placeholder={t('select') + '...'} />
+                <label htmlFor="softwareOptions">{t("pref.softwareOptions")}</label>
+                <Creatable
+                    id="softwareOptions"
+                    className="select"
+                    isMulti
+                    placeholder={t('select') + '...'}
+                    options={toolOptions}
+                    components={{
+                        Option: ({ children, ...rest }) => (
+                            <components.Option {...rest}>
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        alignItems: 'center',
+                                        columnGap: '8px',
+                                    }}
+                                >
+                                    <img style={{ height: '16px', width: '16px' }} src={rest.data.icon} alt="" />
+                                    {children}
+                                </div>
+                            </components.Option>
+                        ),
+                    }}
+                />
+                <input type="submit" value={t<string>('register')} />
+            </form>
+        </Modal>
     )
 }
 

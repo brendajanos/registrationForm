@@ -1,12 +1,13 @@
 import React, { FormEventHandler } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import Modal from '../components/Modal'
 import { useRegistration } from '../contexts/registration'
 
 const RegistrationPage = () => {
     const navigate = useNavigate()
     const registration = useRegistration()
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     const handleSubmit: FormEventHandler = (event) => {
         event.preventDefault()
@@ -25,24 +26,33 @@ const RegistrationPage = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">{t("reg.email")}</label>
-            <input id="email" name="email" type="email" required></input>
+        <Modal>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="email">{t('reg.email')}</label>
+                <input id="email" name="email" type="email" required></input>
 
-            <label htmlFor="password">{t("reg.password")}</label>
-            <input id="password" name="password" type="password" required></input>
+                <label htmlFor="password">{t('reg.password')}</label>
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required
+                ></input>
 
-            <label htmlFor="birthdate">{t("reg.birthdate")}</label>
-            <input id="birthdate" name="birthdate" type="date" required></input>
+                <label htmlFor="birthdate">{t('reg.birthdate')}</label>
+                <input id="birthdate" name="birthdate" type="date" required></input>
 
-            <label htmlFor="newsletter">{t("reg.newsletter")}</label>
-            <input id="newletter" name="newsletter" type="checkbox"></input>
+                <label htmlFor="newsletter">{t('reg.newsletter')}</label>
+                <input id="newletter" name="newsletter" type="checkbox"></input>
 
-            <label htmlFor="cookies">{t("reg.cookies")}</label>
-            <input id="cookies" name="cookies" type="checkbox" required></input>
+                <label htmlFor="cookies">{t('reg.cookies')}</label>
+                <input id="cookies" name="cookies" type="checkbox" required></input>
 
-            <input type="submit" value={t<string>("next")} />
-        </form>
+                <input type="submit" value={t<string>('next')} />
+            </form>
+        </Modal>
     )
 }
 

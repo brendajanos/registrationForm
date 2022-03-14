@@ -28,7 +28,11 @@ i18n.use(initReactI18next).init({
                     laptop:"Laptop",
                     desktop:"Desktop"
                 },
-                confirmation: "Email sent to {{email}}."
+                confirmation: "Email sent to {{email}}.",
+                pref :{
+                    computerOptions:"Which type of hardware do you have?",
+                    softwareOptions:"Which softwares can be found on your machine?"
+                }
 
             }
 
@@ -49,7 +53,11 @@ i18n.use(initReactI18next).init({
                     laptop:"Laptop",
                     desktop:"Asztali gép"
                 },
-                confirmation: "Az {{email}}-re elküldtük a további információkat."
+                confirmation: "Az {{email}}-re elküldtük a további információkat.",
+                pref :{
+                    computerOptions:"Laptop vagy asztali gép?",
+                    softwareOptions:"Milyen szoftverek találhatóak meg a gépeden?"
+                }
                 
             }
         }
