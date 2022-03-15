@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Route, Routes, Navigate, BrowserRouter as Router } from 'react-router-dom'
 import RegistrationPage from '../pages/RegistrationPage'
 import ConfirmationPage from '../pages/ConfirmationPage'
@@ -7,7 +7,7 @@ import { RegistrationProvider, IBasicData } from '../contexts/registration'
 import ProtectedRoute from './ProtectedRoute'
 import Header from './Header'
 import i18n from 'i18next'
-import { useTranslation, initReactI18next } from "react-i18next";
+import { initReactI18next } from "react-i18next";
 
 
 i18n.use(initReactI18next).init({
@@ -67,8 +67,6 @@ i18n.use(initReactI18next).init({
 
 function App() {
     const [basicData, setBasicData] = useState<IBasicData>()
-    const {t} = useTranslation()
-
 
     return (
         <Router>
