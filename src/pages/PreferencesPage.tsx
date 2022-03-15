@@ -5,10 +5,6 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Modal from '../components/Modal'
 
-const computerOptions = [
-    { value: 'laptop', label: '💻 Laptop' },
-    { value: 'desktop', label: '🖥 Asztali gép' },
-]
 
 const toolOptions = [
     { value: 'wordpad', label: 'Jegyzettömb', icon: '/notepad.png' },
