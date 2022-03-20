@@ -28,29 +28,37 @@ const RegistrationPage = () => {
     return (
         <Modal>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="email">{t('reg.email')}</label>
-                <input id="email" name="email" type="email" required></input>
+                <div className="fields">
+                    <label htmlFor="email">{t('reg.email')}</label>
+                    <input id="email" name="email" type="email" required></input>
 
-                <label htmlFor="password">{t('reg.password')}</label>
-                <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                    required
-                ></input>
+                    <label htmlFor="password">{t('reg.password')}</label>
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        required
+                    ></input>
 
-                <label htmlFor="birthdate">{t('reg.birthdate')}</label>
-                <input id="birthdate" name="birthdate" type="date" required></input>
+                    <label htmlFor="birthdate">{t('reg.birthdate')}</label>
+                    <input id="birthdate" name="birthdate" type="date" required></input>
 
-                <label htmlFor="newsletter">{t('reg.newsletter')}</label>
-                <input id="newletter" name="newsletter" type="checkbox"></input>
+                    <label htmlFor="newsletter">{t('reg.newsletter')}</label>
+                    <input id="newletter" name="newsletter" type="checkbox"></input>
 
-                <label htmlFor="cookies">{t('reg.cookies')}</label>
-                <input id="cookies" name="cookies" type="checkbox" required></input>
+                    <div className="cookie" style={{ paddingBottom:20}}>
+                        <label htmlFor="cookies">{t('reg.cookies')}</label>
+                        <input id="cookies" name="cookies" type="checkbox" required></input>
+                    </div>
 
-                <input type="submit" value={t<string>('next')} />
+                    <input
+                        style={{ display: 'flex', justifyContent: 'center' }}
+                        type="submit"
+                        value={t<string>('next')}
+                    />
+                </div>
             </form>
         </Modal>
     )

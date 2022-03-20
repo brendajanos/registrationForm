@@ -2,37 +2,73 @@
     max-width: 400px;
     width: 100%;
     margin: 100px auto;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 12px;
-    border-radius: 8px;
+    padding: 60px 35px 35px 35px;
+    border-radius: 40px;
+    background-color: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
 }
 
 .Modal input[type='email'],
 .Modal input[type='password'],
 .Modal input[type='date'] {
     width: 100%;
-    height: 30px;
-    margin-bottom: 10px;
-    border: 1px solid hsl(0, 0%, 80%);
-    min-height: 38px;
-    border-radius: 4px;
-    padding: 4px 8px;
+    text-indent: 5px;
+    height: 40px;
+    justify-content: center;
+    font-size: 15px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 }
 
-.Modal input[type="checkbox"] { 
-    filter: hue-rotate(302deg)
-  }
+.Modal input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    padding: 20px 10px 20px 5px;
+}
+
+
+.Modal input[type='checkbox'] {
+    filter: hue-rotate(42deg);
+}
+
 
 .Modal input[type='submit'] {
-    min-height: 32px;
-    border-radius: 4px;
-    padding: 0px 20px;
-    border:none;
-    margin-left: auto;
-    background: #4db6ac
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    align-items: center !important;
+    text-align: center !important;
+    background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+    transition: 0.5s;
+}
+
+.Modal input[type='submit']:hover {
+    background-image: linear-gradient(to left, #4669bb 0%, #8E54E9  51%, #7474BF  100%);
+
 }
 
 .Modal label {
     display: flex;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
+    padding: 2px;
+    
+}
+
+
+
+.select {
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 }

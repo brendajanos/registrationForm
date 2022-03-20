@@ -4,9 +4,13 @@ import { useRegistration } from '../contexts/registration'
 
 const ConfirmationPage = () => {
     const registration = useRegistration()
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
-    return <Modal>{t("confirmation", {email: registration.basicData?.email})} </Modal>
+    return (
+        <Modal>
+            <div className="message">{t('confirmation', { email: registration.basicData?.email })}</div>
+        </Modal>
+    )
 }
 
 export default ConfirmationPage

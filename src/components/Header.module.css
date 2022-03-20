@@ -1,8 +1,12 @@
 .Header {
     padding: 8px;
-    background: #4db6ac;
+    background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+    box-shadow: 3px 3px 8px #bdbcbc,
+                -3px -3px 8px #ffffff;
     display:flex;
     justify-content: flex-end;
+    gap: 1%;
+
 }
 
 
@@ -11,4 +15,16 @@
     background: rgba(0,0,0,.1);
     padding:6px 10px;
     border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.Header__themeSelector{
+    border:0;
+    background: rgba(0,0,0,.1);
+    padding:6px 10px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+
 }
